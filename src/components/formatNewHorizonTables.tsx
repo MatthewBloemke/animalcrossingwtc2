@@ -9,8 +9,9 @@ const renderImage = (params: any) => {
   );
 };
 
-export function formatNHBugTable(bugs, month, hemisphere) {
-  const columns = [
+export function formatNHBugTable(bugs: any, month: any, hemisphere: any) {
+  console.log(bugs);
+  const columns: any = [
     {
       field: 'image',
       headerName: '',
@@ -43,18 +44,13 @@ export function formatNHBugTable(bugs, month, hemisphere) {
       style={{ height: 500, backgroundColor: '#f0f0f0' }}
       className="p-3 rounded-xl"
     >
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={50}
-        rowsPerPageOptions={[50]}
-      />
+      <DataGrid rows={rows} columns={columns} />
     </div>
   );
 }
 
-export function formatNHFishTable(fish, month, hemisphere) {
-  const columns = [
+export function formatNHFishTable(fish: any, month: any, hemisphere: any) {
+  const columns: any = [
     {
       field: 'image',
       headerName: '',
@@ -89,12 +85,7 @@ export function formatNHFishTable(fish, month, hemisphere) {
       style={{ height: 500, backgroundColor: '#f0f0f0' }}
       className="p-3 rounded-xl"
     >
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={50}
-        rowsPerPageOptions={[50]}
-      />
+      <DataGrid rows={rows} columns={columns} />
     </div>
   );
 }

@@ -18,19 +18,18 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 
 const NorthDash = () => {
-  console.log(process.env.apiKey);
   const [bugTable, setBugTable] = useState([]);
   const [fishTable, setFishTable] = useState([]);
   const [time, setTime] = useState(now());
   const [month, setMonth] = useState(currentMonth());
   const [activeDate, setActiveDate] = useState(new Date(Date.now()));
 
-  const handleChange = (newDate) => {
+  const handleChange = (newDate: any) => {
     setMonth(newDate.getMonth() + 1);
     setActiveDate(newDate);
   };
 
-  const handleTimeChange = (newTime) => {
+  const handleTimeChange = (newTime: any) => {
     setTime(newTime.getHours() + ':' + newTime.getMinutes());
     setActiveDate(newTime);
   };
@@ -38,23 +37,28 @@ const NorthDash = () => {
   useEffect(() => {
     const loadNhArrays = async () => {
       const fishResponse = await pullNHfish(month);
-      console.log(fishResponse);
-      setFishTable(
-        formatNHFishTable(
-          filter_nh_Tables(fishResponse.north, time, month, 'north'),
-          month,
-          'north'
-        )
+      const filteredFish = filter_nh_Tables(
+        fishResponse.north,
+        time,
+        month,
+        'north'
       );
+      const formattedFish: any = formatNHFishTable(
+        filteredFish,
+        month,
+        'north'
+      );
+      setFishTable(formattedFish);
 
       const bugResponse = await pullNHbugs(month);
-      setBugTable(
-        formatNHBugTable(
-          filter_nh_Tables(bugResponse.north, time, month, 'north'),
-          month,
-          'north'
-        )
+      const filteredBugs = filter_nh_Tables(
+        bugResponse.north,
+        time,
+        month,
+        'north'
       );
+      const formattedBugs: any = formatNHBugTable(filteredBugs, month, 'north');
+      setBugTable(formattedBugs);
     };
     loadNhArrays();
   }, [activeDate, month, time]);
@@ -84,9 +88,7 @@ const NorthDash = () => {
             <DesktopDatePicker
               label="Date"
               value={activeDate}
-              name="date"
               onChange={handleChange}
-              renderInput={(params) => <TextField {...params} />}
             />
           </LocalizationProvider>
         </FormControl>
@@ -104,7 +106,6 @@ const NorthDash = () => {
               label="Time"
               value={activeDate}
               onChange={handleTimeChange}
-              renderInput={(params) => <TextField {...params} />}
             />
           </LocalizationProvider>
         </FormControl>

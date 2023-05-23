@@ -17,11 +17,12 @@ export function asPrettyDate(date: Date) {
     return `${month} ${date.getDate().toString(10)}, ${date.getFullYear().toString(10)}`;
 };
 
-export function asTwelveHourTimeString(time: any) {
-    if (time.slice(0,2) === "12") {
+export function asTwelveHourTimeString(time: string) {
+    const hour = Number(time.slice(0,2));
+    if (hour === 12) {
         return time + "pm";
-    } else if (time.slice(0,2) > 12) {
-        const newTime = time.slice(0,2)-12;
+    } else if (hour > 12) {
+        const newTime = hour-12;
         return `${newTime}:${time.slice(3,5)}pm`;
     } else {
         return time + "am";;

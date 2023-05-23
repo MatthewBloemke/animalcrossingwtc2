@@ -13,6 +13,7 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { fi } from 'date-fns/locale';
 
 const bugs = require('../../public/data/00-cf_bugs.json');
 const fish = require('../../public/data/01-cf_fish.json');
@@ -34,8 +35,12 @@ const cityfolk = () => {
     setActiveDate(newTime);
   };
   useEffect(() => {
-    setBugTable(formatBugTable(filterTables(bugs, time, month)));
-    setFishTable(formatFishTable(filterTables(fish, time, month)));
+    const filteredBugs = filterTables(bugs, time, month);
+    const filteredFish = filterTables(fish, time, month);
+    const formattedBugs: any = formatBugTable(filteredBugs);
+    const formattedFish: any = formatFishTable(filteredFish);
+    setBugTable(formattedBugs);
+    setFishTable(formattedFish);
   }, [activeDate, month, time]);
 
   return (
@@ -66,9 +71,7 @@ const cityfolk = () => {
             <DesktopDatePicker
               label="Date"
               value={activeDate}
-              name="date"
               onChange={handleChange}
-              renderInput={(params) => <TextField {...params} />}
             />
           </LocalizationProvider>
         </FormControl>
@@ -86,7 +89,6 @@ const cityfolk = () => {
               label="Time"
               value={activeDate}
               onChange={handleTimeChange}
-              renderInput={(params) => <TextField {...params} />}
             />
           </LocalizationProvider>
         </FormControl>

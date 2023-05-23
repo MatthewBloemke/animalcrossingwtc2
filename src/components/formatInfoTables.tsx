@@ -14,7 +14,18 @@ const renderImage = (params: any) => {
   );
 };
 
-export function formatBugTable(bugs: any) {
+interface bugObject {
+  bug_image: string;
+  bug_name: string;
+  catch_time_end: string;
+  catch_time_start: string;
+  location: string;
+  months_str: string;
+  price: number;
+  months_array: Array<number>;
+}
+
+export function formatBugTable(bugs: Array<bugObject>) {
   const columns: any = [
     {
       field: 'image',
@@ -54,12 +65,7 @@ export function formatBugTable(bugs: any) {
       style={{ height: 500, backgroundColor: '#f0f0f0' }}
       className="p-3 rounded-xl"
     >
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={50}
-        rowsPerPageOptions={[50]}
-      />
+      <DataGrid rows={rows} columns={columns} />
     </div>
   );
 }
@@ -106,12 +112,7 @@ export function formatFishTable(fish: any) {
       style={{ height: 500, backgroundColor: '#f0f0f0' }}
       className="p-3 rounded-xl"
     >
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={50}
-        rowsPerPageOptions={[50]}
-      />
+      <DataGrid rows={rows} columns={columns} />
     </div>
   );
 }

@@ -24,12 +24,12 @@ const SouthDash = () => {
   const [month, setMonth] = useState(currentMonth());
   const [activeDate, setActiveDate] = useState(new Date(Date.now()));
 
-  const handleChange = (newDate) => {
+  const handleChange = (newDate: any) => {
     setMonth(newDate.getMonth() + 1);
     setActiveDate(newDate);
   };
 
-  const handleTimeChange = (newTime) => {
+  const handleTimeChange = (newTime: any) => {
     setTime(newTime.getHours() + ':' + newTime.getMinutes());
     setActiveDate(newTime);
   };
@@ -37,23 +37,28 @@ const SouthDash = () => {
   useEffect(() => {
     const loadNhArrays = async () => {
       const fishResponse = await pullNHfish(month);
-      console.log(fishResponse);
-      setFishTable(
-        formatNHFishTable(
-          filter_nh_Tables(fishResponse.south, time, month, 'south'),
-          month,
-          'south'
-        )
+      const filteredFish = filter_nh_Tables(
+        fishResponse.south,
+        time,
+        month,
+        'south'
       );
+      const formattedFish: any = formatNHFishTable(
+        filteredFish,
+        month,
+        'south'
+      );
+      setFishTable(formattedFish);
 
       const bugResponse = await pullNHbugs(month);
-      setBugTable(
-        formatNHBugTable(
-          filter_nh_Tables(bugResponse.south, time, month, 'south'),
-          month,
-          'south'
-        )
+      const filteredBugs = filter_nh_Tables(
+        bugResponse.south,
+        time,
+        month,
+        'south'
       );
+      const formattedBugs: any = formatNHBugTable(filteredBugs, month, 'south');
+      setBugTable(formattedBugs);
     };
     loadNhArrays();
   }, [activeDate, month, time]);
@@ -83,9 +88,7 @@ const SouthDash = () => {
             <DesktopDatePicker
               label="Date"
               value={activeDate}
-              name="date"
               onChange={handleChange}
-              renderInput={(params) => <TextField {...params} />}
             />
           </LocalizationProvider>
         </FormControl>
@@ -103,7 +106,6 @@ const SouthDash = () => {
               label="Time"
               value={activeDate}
               onChange={handleTimeChange}
-              renderInput={(params) => <TextField {...params} />}
             />
           </LocalizationProvider>
         </FormControl>

@@ -1,5 +1,5 @@
 const splitterHelper = (timeString: string) => {
-  console.log(timeString);
+  (timeString);
   if (timeString.includes(' – ')){ 
     return timeString.split(' – ');
   }
@@ -17,7 +17,6 @@ const convertToTimeObject = (timeRanges: any) => {
   timeRanges.forEach((range: string) => {
       let startTime = range[0]
       let endTime = range[1]
-      console.log(startTime, endTime)
       if (startTime.includes('PM')) {
           startTime = `${Number(startTime.slice(0,2)) + 12}`
       } else {
@@ -59,9 +58,7 @@ export function filter_nh_Tables (array: any, time: any, month: any, hemisphere:
 
   const filteredArray: any = [];
   array.forEach((item: any) => {
-        console.log(item)
       const itemCatchRange = item[hemisphere].times_by_month[month];
-      console.log(itemCatchRange)
       if (itemCatchRange === 'All day') {
           filteredArray.push(item)
       } else {
