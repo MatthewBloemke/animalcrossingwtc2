@@ -1,6 +1,6 @@
 const headers = new Headers();
 headers.append("Content-Type", "application/json");
-headers.append("X-API-KEY", process.env.apiKey);
+headers.append("X-API-KEY", process.env.apiKey!);
 
 const fetchJson = async (url, options, onCancel) => {
     try {
