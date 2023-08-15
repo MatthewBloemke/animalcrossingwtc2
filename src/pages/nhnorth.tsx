@@ -65,16 +65,7 @@ const NorthDash = () => {
 
   return (
     <div className="h-full w-full flex flex-col">
-      <div className="h-20 flex w-[95%] m-auto items-center justify-center my-8">
-        <h2
-          className="p-3 md:p-5 rounded-lg shadow-xl text-3xl md:text-5xl"
-          id="header"
-          style={{ fontFamily: 'FinkHeavy', color: 'white' }}
-        >
-          New Horizons: North Hemisphere
-        </h2>
-      </div>
-      <div className="flex flex-col items-center md:flex-row justify-evenly">
+      <div className="flex flex-col items-center md:flex-row justify-evenly mt-24">
         <FormControl
           className="p-[6px] rounded-md shadow-xl"
           sx={{

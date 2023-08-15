@@ -8,7 +8,7 @@
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl md:text-7xl
+    @apply text-3xl  md:text-6xl
   }
 
   h2 {
@@ -19,8 +19,8 @@
     @apply cursor-pointer
   }
 
-  button {
-    @apply shadow-md shadow-gray-400 rounded-xl uppercase bg-white
+  p {
+    @apply text-white
   }
 }
 
@@ -30,7 +30,33 @@ body {
   background-size: cover;
 }
 
-#header, .dateTime {
-  background: rgb(98,252,73);
-  background: radial-gradient(circle, rgba(98,252,73,.5) 0%, rgba(0,152,0,1) 100%);
+.navItems {
+  color: white;
+}
+
+.navList {
+  list-style-type: none;
+}
+
+.carouselActive {
+  visibility: visible;
+  opacity: 1;
+}
+
+.carouselNext {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.carouselPrev {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.carouselHidden {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
 }
