@@ -107,7 +107,7 @@ const Navbar = () => {
             </div>
             <div className="border-b border-white my-4">
               <p className="w-full md:w-[90%] py-4 text-xs">
-                What's the Catch?
+                What&apos;s the Catch?
               </p>
             </div>
           </div>

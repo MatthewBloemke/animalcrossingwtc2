@@ -53,7 +53,7 @@ const Main = () => {
             color: 'white',
           }}
         >
-          Welcome to Animal Crossing: What's the Catch? This site serves as a utility to view what fish and bugs you can catch in your game at a 
+          Welcome to Animal Crossing: What&apos;s the Catch? This site serves as a utility to view what fish and bugs you can catch in your game at a 
           certain date and time. Choose a game, set a date and time, and let us do the rest. Only the bugs and fish that you can catch will display on the screen,
           along with other useful info!
         </p>
