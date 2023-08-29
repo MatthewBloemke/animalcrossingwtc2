@@ -49,22 +49,30 @@ body {
 .carouselActive {
   visibility: visible;
   opacity: 1;
+  transition-property: opacity;
+  transition-duration: 1s;
 }
 
 .carouselNext {
   position: absolute;
   opacity: 0;
   visibility: hidden;
+  transition-property: opacity;
+  transition-duration: 1s;
 }
 
 .carouselPrev {
   position: absolute;
   opacity: 0;
   visibility: hidden;
+  transition-property: opacity;
+  transition-duration: 1s;
 }
 
 .carouselHidden {
   position: absolute;
   opacity: 0;
   visibility: hidden;
+  transition-property: opacity;
+  transition-duration: 1s;
 }

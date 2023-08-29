@@ -22,9 +22,9 @@ const Carousel = ({ cardObjects }: any) => {
 
   useEffect(() => {
     const autoPlay = () => {
-      let ms = 140000;
+      let ms = 14000;
       if (timeoutId > 0) {
-        ms = 70000;
+        ms = 7000;
       }
       const id = setTimeout(() => {
         const newIndex = activeIndex + 1;
@@ -94,7 +94,7 @@ const Carousel = ({ cardObjects }: any) => {
           <div
             key={index}
             className={
-              'bg-[#f0f0f0] rounded-xl transition-opacity duration-[2500ms] ease-in-out' + ' ' + setClass(index)
+              'bg-[#f0f0f0] rounded-xl' + ' ' + setClass(index)
             }
           >
             <div
