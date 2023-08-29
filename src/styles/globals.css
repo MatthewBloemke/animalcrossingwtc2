@@ -8,7 +8,7 @@
   }
 
   h1 {
-    @apply text-3xl  md:text-6xl
+    @apply text-3xl  lg:text-5xl
   }
 
   h2 {
@@ -20,8 +20,16 @@
   }
 
   p {
-    @apply text-white
+    @apply text-black
   }
+
+  li {
+    @apply ease-in-out md:hover:border-b-[3px] md:hover:border-[#5CFC4C]
+  }
+}
+
+a, svg, div {
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -31,7 +39,7 @@ body {
 }
 
 .navItems {
-  color: white;
+  color: black;
 }
 
 .navList {

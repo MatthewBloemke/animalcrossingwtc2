@@ -1,10 +1,10 @@
 'use client';
-import AnimalCrossing from '../../public/ac.png';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import AnimalCrossing from '../../public/AnimalCrossing.png';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -22,10 +22,10 @@ const Navbar = () => {
   const nhSouthStyle =
     pathname === '/nhsouth' ? { borderBottom: 'solid #5CFC4C' } : {};
     return (
-      <div className="w-full h-16 md:h-[72px] absolute bg-[#3c3c3c]" id="nav">
+      <div className="w-full h-16 md:h-[72px] absolute bg-[#f0f0f0]" id="nav">
       <div className="flex justify-between items-center w-full h-full px-2">
         <div className="w-full flex items-center">
-          <div className="flex flex-row justify-normal w-[125px] md:w-[150px] lg:w-[175px] lg:ml-10">
+          <div className="flex flex-row justify-normal w-[75px] md:w-[100px] lg:w-[115px] lg:ml-10">
             <Link href="/">
               <Image src={AnimalCrossing} alt="Animal Crossing Logo" className="w-full" />
             </Link>
@@ -35,7 +35,7 @@ const Navbar = () => {
           <ul className="hidden md:flex navList">
             <Link href="/#nav" className="mx-5">
               <li
-                className="py-[5px] md:text-xl lg:text-xl navItems"
+                className="py-[5px] md:text-xl lg:text-xl navItems rounded-sm"
                 style={homeStyle}
               >
                 Home
@@ -43,7 +43,7 @@ const Navbar = () => {
             </Link>
             <Link href="/cityfolk" className="mx-5">
               <li
-                className="py-[5px] md:text-xl lg:text-xl navItems"
+                className="py-[5px] md:text-xl lg:text-xl navItems rounded-sm"
                 style={cityFolkStyle}
               >
                 City Folk
@@ -51,7 +51,7 @@ const Navbar = () => {
             </Link>
             <Link href="/nhnorth" className="mx-5">
               <li
-                className="py-[5px] md:text-xl lg:text-xl navItems"
+                className="py-[5px] md:text-xl lg:text-xl navItems rounded-sm"
                 style={nhNorthStyle}
               >
                 New Horizons: North
@@ -59,7 +59,7 @@ const Navbar = () => {
             </Link>
             <Link href="/nhsouth" className="mx-5">
               <li
-                className="py-[5px] flex-nowrap md:text-xl lg:text-xl navItems"
+                className="py-[5px] flex-nowrap md:text-xl lg:text-xl navItems rounded-sm"
                 style={nhSouthStyle}
               >
                 New Horizons: South
@@ -68,7 +68,7 @@ const Navbar = () => {
           </ul>
           <div
             onClick={handleNav}
-            className="text-white md:hidden rounded-full p-3 cursor-pointer hover:bg-black/10 active:scale-95 ease-in duration-100"
+            className="md:hidden rounded-full p-3 cursor-pointer hover:bg-black/10 active:scale-95 ease-in duration-100"
           >
             <AiOutlineMenu size={30} />
           </div>
@@ -84,7 +84,7 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen  bg-[#000000] p-8 ease-in duration-500'
+              ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen  bg-[#f0f0f0] p-8 ease-in duration-500'
               : 'fixed left-[-100%] top-0 p-8 ease-in duration-500 h-screen'
           }
         >
@@ -94,18 +94,19 @@ const Navbar = () => {
                 <Image
                   onClick={() => setNav(false)}
                   src={AnimalCrossing}
+                  className='-ml-3'
                   alt="/"
-                  width={125}
+                  width={100}
                 />
               </Link>
               <div
                 onClick={handleNav}
-                className="rounded-full p-3 cursor-pointer text-white -mr-[10px]"
+                className="rounded-full p-3 cursor-pointer -mr-[10px]"
               >
                 <AiOutlineClose />
               </div>
             </div>
-            <div className="border-b border-white my-4">
+            <div className="border-b border-black my-4">
               <p className="w-full md:w-[90%] py-4 text-xs">
                 What&apos;s the Catch?
               </p>

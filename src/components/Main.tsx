@@ -1,9 +1,7 @@
-import Image from 'next/image';
 import React from 'react';
+import Carousel from './Carousel';
 import cityFolk from '../../public/Cityfolkbox.jpg';
 import newHorizons from '../../public/NewHorizons.jpg';
-import Link from 'next/link';
-import Carousel from './Carousel';
 
 const Main = () => {
   const slide = [
@@ -35,22 +33,22 @@ const Main = () => {
   const buttons = [0, 1, 2];
   return (
     <div className="w-full h-full p-8 flex flex-col md:flex-row">
-      <div className="w-full mt-16 mb-10 md:h-[450px] md:w-[40%] md:mx-[5%] md:mt-40 bg-[#3c3c3c] md:pb-5">
+      <div className="w-full mt-16 mb-10 md:h-[450px] md:w-[40%] md:mx-[5%] md:mt-40 bg-[#f0f0f0] md:pb-5 rounded-lg">
         <h1
           className="p-5 rounded-lg"
           id="header"
           style={{
             fontFamily: 'FinkHeavy',
-            color: 'white',
+            color: 'black',
           }}
         >
           Animal Crossing: {"What's"} the Catch?
         </h1>
         <p 
-          className='m-5 md:text-2xl'
+          className='m-5 lg:text-xl'
           style={{
             fontFamily: 'FinkHeavy',
-            color: 'white',
+            color: 'black',
           }}
         >
           Welcome to Animal Crossing: What&apos;s the Catch? This site serves as a utility to view what fish and bugs you can catch in your game at a 

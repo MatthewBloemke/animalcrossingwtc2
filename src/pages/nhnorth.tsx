@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import { Grid, FormControl } from '@mui/material';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import {
   asPrettyDate,
   asTwelveHourTimeString,
   now,
   currentMonth,
 } from '@/components/dateTime';
-import { Grid, FormControl, TextField } from '@mui/material';
 import { filter_nh_Tables } from '@/components/filterTables';
 import {
   formatNHBugTable,
   formatNHFishTable,
 } from '@/components/formatNewHorizonTables';
 import { pullNHbugs, pullNHfish } from '@/components/api';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 
 const NorthDash = () => {
   const [bugTable, setBugTable] = useState([]);
@@ -65,14 +65,13 @@ const NorthDash = () => {
 
   return (
     <div className="h-full w-full flex flex-col">
-      <div className="flex flex-col items-center md:flex-row justify-evenly mt-24">
+      <div className="flex flex-col items-center md:flex-row justify-evenly mt-24 w-[90%] md:w-[70%] mx-auto bg-[#f0f0f0] p-5 rounded-lg">
         <FormControl
-          className="p-[6px] rounded-md shadow-xl"
+          className="p-[6px] rounded-md"
           sx={{
             width: '10%',
             minWidth: '250px',
             height: '65px',
-            backgroundColor: 'white',
           }}
         >
           <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -84,12 +83,11 @@ const NorthDash = () => {
           </LocalizationProvider>
         </FormControl>
         <FormControl
-          className="p-[6px] rounded-md shadow-xl m-3 md:m-0"
+          className="p-[6px] rounded-md"
           sx={{
             width: '10px',
             minWidth: '250px',
             height: '65px',
-            backgroundColor: 'white',
           }}
         >
           <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -101,13 +99,12 @@ const NorthDash = () => {
           </LocalizationProvider>
         </FormControl>
       </div>
-      <div className="flex justify-evenly my-4 w-[95%] m-auto">
+      <div className="flex justify-evenly my-4 w-[70%] mx-auto bg-[#f0f0f0] rounded-lg">
         <p
-          className="dateTime p-3 rounded-md shadow-xl"
+          className="dateTime p-3 rounded-md"
           style={{
             fontFamily: 'FinkHeavy',
             fontSize: '2em',
-            color: 'white',
           }}
         >
           {asPrettyDate(activeDate)}, {asTwelveHourTimeString(time)}

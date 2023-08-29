@@ -22,9 +22,9 @@ const Carousel = ({ cardObjects }: any) => {
 
   useEffect(() => {
     const autoPlay = () => {
-      let ms = 14000;
+      let ms = 140000;
       if (timeoutId > 0) {
-        ms = 7000;
+        ms = 70000;
       }
       const id = setTimeout(() => {
         const newIndex = activeIndex + 1;
@@ -94,23 +94,23 @@ const Carousel = ({ cardObjects }: any) => {
           <div
             key={index}
             className={
-              'bg-black transition-opacity duration-[2500ms]' + ' ' + setClass(index)
+              'bg-[#f0f0f0] rounded-xl transition-opacity duration-[2500ms] ease-in-out' + ' ' + setClass(index)
             }
           >
             <div
               className={
-                'flex flex-row w-full' + ' ' + setClass(index)
+                'flex flex-col lg:flex-row w-full' + ' ' + setClass(index)
               }
             >
               <Image
                 src={obj.src}
                 alt={obj.alt}
-                className="block w-full relative md:h-[450px] w-auto"
+                className="block w-full relative lg:max-w-[225px] xl:max-w-[350px] h-auto rounded-xl"
               />
-              <div className='flex items-center justify-center flex-col w-full'>
-                <h3 className="text-white text-center md:text-2xl md:mb-2">{obj.label}</h3>
+              <div className='flex items-center justify-center flex-col w-full lg:min-w-[150px]'>
+                <h3 className="text-center md:text-2xl md:mb-2">{obj.label}</h3>
                 <Link href={obj.href}>
-                    <button className="border-solid border-2 border-[#5CFC4C] px-2 hover:bg-[#5CFC4C] active:scale-[.98] text-sm md:text-base text-white">
+                    <button className="mb-8 border-solid border-2 border-[#5CFC4C] rounded-xl px-2 hover:bg-[#5CFC4C] active:scale-[.98] text-sm md:text-base">
                     {obj.button}
                     </button>
                 </Link>

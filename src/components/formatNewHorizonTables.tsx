@@ -1,6 +1,6 @@
-import { DataGrid } from '@mui/x-data-grid';
 import React from 'react';
 import Image from 'next/image';
+import { DataGrid } from '@mui/x-data-grid';
 
 const renderImage = (params: any) => {
   const bugName = params.row.bug_name;
