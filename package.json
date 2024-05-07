@@ -9,15 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/material": "^5.11.16",
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/server": "^11.11.0",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.16",
+    "@mui/material": "^5.15.16",
+    "@mui/material-nextjs": "^5.15.11",
+    "@mui/types": "^7.2.14",
     "@mui/x-data-grid": "^6.0.4",
     "@mui/x-date-pickers": "^6.0.4",
     "@next/font": "^13.2.4",
-    "@types/node": "18.15.11",
-    "@types/react": "18.0.33",
-    "@types/react-dom": "18.0.11",
     "date-fns": "^2.29.3",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
@@ -28,6 +30,9 @@
     "typescript": "5.0.3"
   },
   "devDependencies": {
+    "@types/node": "^20.12.10",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.3.1"

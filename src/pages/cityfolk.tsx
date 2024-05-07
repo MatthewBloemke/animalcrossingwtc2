@@ -1,21 +1,15 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useState } from 'react';
-import { Grid, FormControl } from '@mui/material';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { filterTables } from '@/components/filterTables';
 import { formatBugTable, formatFishTable } from '@/components/formatInfoTables';
-import {
-  asPrettyDate,
-  asTwelveHourTimeString,
-  now,
-  currentMonth,
-} from '@/components/dateTime';
+import { now, currentMonth } from '@/components/dateTime';
 import bugs from '../../public/data/00-cf_bugs.json';
 import fish from '../../public/data/01-cf_fish.json';
-
+import { FormControl, Grid } from '@mui/material';
 
 const cityfolk = () => {
   const [bugTable, setBugTable] = useState([]);
@@ -44,15 +38,8 @@ const cityfolk = () => {
 
   return (
     <div className="h-full w-full flex flex-col">
-      <div className="flex flex-col items-center md:flex-row justify-evenly mt-24 bg-[#f0f0f0] w-[90%] md:w-[70%] mx-auto rounded-xl p-5">
-        <FormControl
-          className="p-[6px] rounded-md"
-          sx={{
-            width: '10%',
-            minWidth: '250px',
-            height: '65px',
-          }}
-        >
+      <div className="md:mt-24 flex flex-col items-center md:flex-row mb-2 justify-evenly mt-20 bg-[#1b9938] w-[80%] md:w-[80%] mx-auto rounded-xl p-5">
+        <FormControl className="mb-4 md:mb-0 md:mr-6 w-full">
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DesktopDatePicker
               label="Date"
@@ -61,14 +48,7 @@ const cityfolk = () => {
             />
           </LocalizationProvider>
         </FormControl>
-        <FormControl
-          className="p-[6px] rounded-md"
-          sx={{
-            width: '10px',
-            minWidth: '250px',
-            height: '65px',
-          }}
-        >
+        <FormControl className="w-full">
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <TimePicker
               label="Time"
@@ -77,18 +57,6 @@ const cityfolk = () => {
             />
           </LocalizationProvider>
         </FormControl>
-      </div>
-      <div className="flex justify-evenly my-4 w-[70%] mx-auto bg-[#f0f0f0] rounded-xl">
-        <p
-          className="dateTime p-3"
-          style={{
-            fontFamily: 'FinkHeavy',
-            fontSize: '2em',
-            color: '',
-          }}
-        >
-          {asPrettyDate(activeDate)}, {asTwelveHourTimeString(time)}
-        </p>
       </div>
       <Grid item xs={12}>
         <Grid container sx={{ justifyContent: 'center' }}>

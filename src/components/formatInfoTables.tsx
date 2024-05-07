@@ -25,6 +25,25 @@ interface bugObject {
   months_array: Array<number>;
 }
 
+const dataGridStyles = {
+  root: {
+    '& .MuiDataGrid-cell': {
+      borderRight: '1px solid #fff',
+      borderBottom: '1px solid #fff !important',
+    },
+    '& .MuiDataGrid-columnHeaders': {
+      borderBottom: '1px solid #fff',
+    },
+    '& .MuiDataGrid-footerContainer': {
+      borderTop: '1px solid #fff',
+    },
+    '& .MuiDataGrid-root': {
+      borderColor: '#fff',
+    },
+    borderColor: '#fff',
+  },
+};
+
 export function formatBugTable(bugs: Array<bugObject>) {
   const columns: any = [
     {
@@ -53,7 +72,8 @@ export function formatBugTable(bugs: Array<bugObject>) {
     }
     rows.push({
       id: bugs[i].bug_name,
-      bug_name: bugs[i].bug_name,
+      bug_name:
+        bugs[i].bug_name.charAt(0).toUpperCase() + bugs[i].bug_name.slice(1),
       price: bugs[i].price,
       location: bugs[i].location,
       timeRange: timeRange,
@@ -62,10 +82,10 @@ export function formatBugTable(bugs: Array<bugObject>) {
   }
   return (
     <div
-      style={{ height: 500, backgroundColor: '#f0f0f0' }}
+      style={{ height: 500, backgroundColor: '#1b9938' }}
       className="p-3 rounded-xl"
     >
-      <DataGrid rows={rows} columns={columns} />
+      <DataGrid rows={rows} columns={columns} sx={dataGridStyles.root} />
     </div>
   );
 }
@@ -99,7 +119,8 @@ export function formatFishTable(fish: any) {
     }
     rows.push({
       id: fish[i].fish_name,
-      fish_name: fish[i].fish_name,
+      fish_name:
+        fish[i].fish_name.charAt(0).toUpperCase() + fish[i].fish_name.slice(1),
       price: fish[i].price,
       shadow_size: fish[i].shadow_size,
       location: fish[i].location,
@@ -109,10 +130,10 @@ export function formatFishTable(fish: any) {
   }
   return (
     <div
-      style={{ height: 500, backgroundColor: '#f0f0f0' }}
+      style={{ height: 500, backgroundColor: '#1b9938' }}
       className="p-3 rounded-xl"
     >
-      <DataGrid rows={rows} columns={columns} />
+      <DataGrid rows={rows} columns={columns} sx={dataGridStyles.root} />
     </div>
   );
 }

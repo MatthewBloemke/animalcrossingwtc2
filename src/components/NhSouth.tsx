@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, FormControl } from '@mui/material';
+import { Grid, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import {
-  asPrettyDate,
-  asTwelveHourTimeString,
-  now,
-  currentMonth,
-} from '@/components/dateTime';
+import { now, currentMonth } from '@/components/dateTime';
 import { filter_nh_Tables } from '@/components/filterTables';
 import {
   formatNHBugTable,
@@ -17,7 +12,7 @@ import {
 } from '@/components/formatNewHorizonTables';
 import { pullNHbugs, pullNHfish } from '@/components/api';
 
-const NorthDash = () => {
+const SouthDash = ({ hemisphere, setHemisphere }: any) => {
   const [bugTable, setBugTable] = useState([]);
   const [fishTable, setFishTable] = useState([]);
   const [time, setTime] = useState(now());
@@ -38,26 +33,26 @@ const NorthDash = () => {
     const loadNhArrays = async () => {
       const fishResponse = await pullNHfish(month);
       const filteredFish = filter_nh_Tables(
-        fishResponse.north,
+        fishResponse.south,
         time,
         month,
-        'north'
+        'south'
       );
       const formattedFish: any = formatNHFishTable(
         filteredFish,
         month,
-        'north'
+        'south'
       );
       setFishTable(formattedFish);
 
       const bugResponse = await pullNHbugs(month);
       const filteredBugs = filter_nh_Tables(
-        bugResponse.north,
+        bugResponse.south,
         time,
         month,
-        'north'
+        'south'
       );
-      const formattedBugs: any = formatNHBugTable(filteredBugs, month, 'north');
+      const formattedBugs: any = formatNHBugTable(filteredBugs, month, 'south');
       setBugTable(formattedBugs);
     };
     loadNhArrays();
@@ -65,50 +60,44 @@ const NorthDash = () => {
 
   return (
     <div className="h-full w-full flex flex-col">
-      <div className="flex flex-col items-center md:flex-row justify-evenly mt-24 w-[90%] md:w-[70%] mx-auto bg-[#f0f0f0] p-5 rounded-lg">
-        <FormControl
-          className="p-[6px] rounded-md"
-          sx={{
-            width: '10%',
-            minWidth: '250px',
-            height: '65px',
-          }}
-        >
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <DesktopDatePicker
-              label="Date"
-              value={activeDate}
-              onChange={handleChange}
-            />
-          </LocalizationProvider>
-        </FormControl>
-        <FormControl
-          className="p-[6px] rounded-md"
-          sx={{
-            width: '10px',
-            minWidth: '250px',
-            height: '65px',
-          }}
-        >
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <TimePicker
-              label="Time"
-              value={activeDate}
-              onChange={handleTimeChange}
-            />
-          </LocalizationProvider>
-        </FormControl>
-      </div>
-      <div className="flex justify-evenly my-4 w-[70%] mx-auto bg-[#f0f0f0] rounded-lg">
-        <p
-          className="dateTime p-3 rounded-md"
-          style={{
-            fontFamily: 'FinkHeavy',
-            fontSize: '2em',
-          }}
-        >
-          {asPrettyDate(activeDate)}, {asTwelveHourTimeString(time)}
-        </p>
+      <div className="md:mt-24 flex flex-col items-center md:flex-row justify-evenly mt-20 mb-2 w-[80%] mx-auto md:w-[80%] bg-[#1b9938] rounded-lg p-5">
+        <div className="md:w-[30%] md:mb-0 mb-3 w-full">
+          <FormControl fullWidth>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DesktopDatePicker
+                label="Date"
+                value={activeDate}
+                onChange={handleChange}
+              />
+            </LocalizationProvider>
+          </FormControl>
+        </div>
+        <div className="md:w-[30%] md:mb-0 mb-3 w-full">
+          <FormControl fullWidth>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <TimePicker
+                label="Time"
+                value={activeDate}
+                onChange={handleTimeChange}
+              />
+            </LocalizationProvider>
+          </FormControl>
+        </div>
+        <div className="md:w-[30%] w-full">
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={hemisphere}
+              label="Age"
+              onChange={({ target }) => setHemisphere(target.value)}
+            >
+              <MenuItem value={'North'}>North</MenuItem>
+              <MenuItem value={'South'}>South</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
       </div>
       <Grid item xs={12}>
         <Grid container sx={{ justifyContent: 'center' }}>
@@ -128,4 +117,4 @@ const NorthDash = () => {
   );
 };
 
-export default NorthDash;
+export default SouthDash;

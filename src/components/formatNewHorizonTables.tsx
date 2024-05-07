@@ -9,6 +9,25 @@ const renderImage = (params: any) => {
   );
 };
 
+const dataGridStyles = {
+  root: {
+    '& .MuiDataGrid-cell': {
+      borderRight: '1px solid #fff',
+      borderBottom: '1px solid #fff !important',
+    },
+    '& .MuiDataGrid-columnHeaders': {
+      borderBottom: '1px solid #fff',
+    },
+    '& .MuiDataGrid-footerContainer': {
+      borderTop: '1px solid #fff',
+    },
+    '& .MuiDataGrid-root': {
+      borderColor: '#fff',
+    },
+    borderColor: '#fff',
+  },
+};
+
 export function formatNHBugTable(bugs: any, month: any, hemisphere: any) {
   console.log(bugs);
   const columns: any = [
@@ -41,10 +60,10 @@ export function formatNHBugTable(bugs: any, month: any, hemisphere: any) {
   }
   return (
     <div
-      style={{ height: 500, backgroundColor: '#f0f0f0' }}
+      style={{ height: 500, backgroundColor: '#1b9938' }}
       className="p-3 rounded-xl"
     >
-      <DataGrid rows={rows} columns={columns} />
+      <DataGrid rows={rows} columns={columns} sx={dataGridStyles.root} />
     </div>
   );
 }
@@ -82,10 +101,10 @@ export function formatNHFishTable(fish: any, month: any, hemisphere: any) {
   }
   return (
     <div
-      style={{ height: 500, backgroundColor: '#f0f0f0' }}
+      style={{ height: 500, backgroundColor: '#1b9938' }}
       className="p-3 rounded-xl"
     >
-      <DataGrid rows={rows} columns={columns} />
+      <DataGrid rows={rows} columns={columns} sx={dataGridStyles.root} />
     </div>
   );
 }
