@@ -32,10 +32,15 @@ a, svg, div {
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
+#nav {
   background-image: url('../../public/acgrass.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+body {
+  height: '100vh';
+  background-color: #27ae60;
 }
 
 .card {

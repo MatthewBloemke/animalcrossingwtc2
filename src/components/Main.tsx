@@ -6,8 +6,8 @@ import Link from 'next/link';
 
 const Main = () => {
   return (
-    <div className="w-full h-full p-8 flex flex-col">
-      <div className="w-full mt-12 md:mt-20 bg-[#1b9938] rounded-lg shadow-md">
+    <div className="w-full h-full p-8 flex flex-col bg-[#2ecc71]">
+      <div className="mt-12 md:m-20 bg-[#fdf6e3] rounded-lg shadow-md p-10">
         <h1
           className="p-5 rounded-lg text-[#dcb735]"
           id="header"
@@ -31,109 +31,113 @@ const Main = () => {
         </p>
       </div>
       <div className="w-full md:my-10">
-        <div className="flex flex-col md:flex-row justify-evenly align-middle bg-[#1b9938] py-8 rounded-md shadow-md">
-          <Link href="/newhorizons">
-            <div className="card mx-auto my-4 md:m-0">
-              <Image
-                src={newHorizons}
-                alt="Animal Crossing: New Horizons"
-                className="card-front-image card-image"
-              />
-              <div className="card-faders">
+        <div className="flex flex-col md:flex-row justify-evenly align-middle py-8">
+          <div className="bg-[#fdf6e3] shadow rounded-md p-12">
+            <Link href="/newhorizons">
+              <div className="card mx-auto my-4 md:m-0">
                 <Image
                   src={newHorizons}
                   alt="Animal Crossing: New Horizons"
-                  className="card-fader card-image"
+                  className="card-front-image card-image"
                 />
-                <Image
-                  src={newHorizons}
-                  alt="Animal Crossing: New Horizons"
-                  className="card-fader card-image"
-                />
-                <Image
-                  src={newHorizons}
-                  alt="Animal Crossing: New Horizons"
-                  className="card-fader card-image"
-                />
-                <Image
-                  src={newHorizons}
-                  alt="Animal Crossing: New Horizons"
-                  className="card-fader card-image"
-                />
-                <Image
-                  src={newHorizons}
-                  alt="Animal Crossing: New Horizons"
-                  className="card-fader card-image"
-                />
-                <Image
-                  src={newHorizons}
-                  alt="Animal Crossing: New Horizons"
-                  className="card-fader card-image"
-                />
-                <Image
-                  src={newHorizons}
-                  alt="Animal Crossing: New Horizons"
-                  className="card-fader card-image"
-                />
-                <Image
-                  src={newHorizons}
-                  alt="Animal Crossing: New Horizons"
-                  className="card-fader card-image"
-                />
+                <div className="card-faders">
+                  <Image
+                    src={newHorizons}
+                    alt="Animal Crossing: New Horizons"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={newHorizons}
+                    alt="Animal Crossing: New Horizons"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={newHorizons}
+                    alt="Animal Crossing: New Horizons"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={newHorizons}
+                    alt="Animal Crossing: New Horizons"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={newHorizons}
+                    alt="Animal Crossing: New Horizons"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={newHorizons}
+                    alt="Animal Crossing: New Horizons"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={newHorizons}
+                    alt="Animal Crossing: New Horizons"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={newHorizons}
+                    alt="Animal Crossing: New Horizons"
+                    className="card-fader card-image"
+                  />
+                </div>
               </div>
-            </div>
-          </Link>
-          <Link href="/cityfolk">
-            <div className="card my-4 md:m-0">
-              <Image
-                src={cityFolk}
-                alt="Animal Crossing: City Folk"
-                className="card-front-image card-image"
-              />
-              <div className="card-faders">
+            </Link>
+          </div>
+          <div className="bg-[#fdf6e3] shadow rounded-md p-12">
+            <Link href="/cityfolk">
+              <div className="card my-4 md:m-0">
                 <Image
                   src={cityFolk}
                   alt="Animal Crossing: City Folk"
-                  className="card-fader card-image"
+                  className="card-front-image card-image"
                 />
-                <Image
-                  src={cityFolk}
-                  alt="Animal Crossing: City Folk"
-                  className="card-fader card-image"
-                />
-                <Image
-                  src={cityFolk}
-                  alt="Animal Crossing: City Folk"
-                  className="card-fader card-image"
-                />
-                <Image
-                  src={cityFolk}
-                  alt="Animal Crossing: City Folk"
-                  className="card-fader card-image"
-                />
-                <Image
-                  src={cityFolk}
-                  alt="Animal Crossing: City Folk"
-                  className="card-fader card-image"
-                />
-                <Image
-                  src={cityFolk}
-                  alt="Animal Crossing: City Folk"
-                  className="card-fader card-image"
-                />
-                <Image
-                  src={cityFolk}
-                  alt="Animal Crossing: City Folk"
-                  className="card-fader card-image"
-                />
-                <Image
-                  src={cityFolk}
-                  alt="Animal Crossing: City Folk"
-                  className="card-fader card-image"
-                />
+                <div className="card-faders">
+                  <Image
+                    src={cityFolk}
+                    alt="Animal Crossing: City Folk"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={cityFolk}
+                    alt="Animal Crossing: City Folk"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={cityFolk}
+                    alt="Animal Crossing: City Folk"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={cityFolk}
+                    alt="Animal Crossing: City Folk"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={cityFolk}
+                    alt="Animal Crossing: City Folk"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={cityFolk}
+                    alt="Animal Crossing: City Folk"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={cityFolk}
+                    alt="Animal Crossing: City Folk"
+                    className="card-fader card-image"
+                  />
+                  <Image
+                    src={cityFolk}
+                    alt="Animal Crossing: City Folk"
+                    className="card-fader card-image"
+                  />
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
