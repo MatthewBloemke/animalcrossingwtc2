@@ -43,28 +43,46 @@ const Navbar = () => {
           </div>
         </div>
         <div className="md:min-w-[660px]">
-          <ul className="hidden md:flex md:justify-end">
+          <ul className="hidden md:flex md:justify-end gap-1">
             <Button
+              className="navButton"
               size="large"
               href="/"
               color="secondary"
-              style={{ fontSize: '1.3rem' }}
+              style={{
+                fontSize: '1.3rem',
+                borderRadius: 32,
+                color: '#1b9938',
+              }}
+              variant="contained"
             >
               Home
             </Button>
             <Button
+              className="navButton"
               size="large"
               href="/cityfolk"
               color="secondary"
-              style={{ fontSize: '1.3rem' }}
+              style={{
+                fontSize: '1.3rem',
+                borderRadius: 32,
+                color: '#1b9938',
+              }}
+              variant="contained"
             >
               City Folk
             </Button>
             <Button
+              className="navButton"
               size="large"
               href="/newhorizons"
               color="secondary"
-              style={{ fontSize: '1.3rem' }}
+              variant="contained"
+              style={{
+                fontSize: '1.3rem',
+                borderRadius: 32,
+                color: '#1b9938',
+              }}
             >
               New Horizons
             </Button>
@@ -102,14 +120,18 @@ const Navbar = () => {
             </Link> */}
           </ul>
           <div className="md:hidden">
-            <IconButton onClick={toggleDrawer(true)}>
+            <IconButton
+              onClick={toggleDrawer(true)}
+              color="secondary"
+              sx={{ backgroundColor: '#fdf6e3 !important', color: '#333' }}
+            >
               <MenuIcon />
             </IconButton>
           </div>
         </div>
       </div>
       <Drawer open={nav} sx={{ width: '40%' }} onClose={toggleDrawer(false)}>
-        <div className="bg-[#1b9938] w-[215px] h-full">
+        <div className="bg-[#fdf6e3] w-[215px] h-full">
           <div>
             <div className="flex w-full items-center justify-between">
               <Link href="/">
@@ -122,7 +144,7 @@ const Navbar = () => {
                 />
               </Link>
             </div>
-            <div className="border-b border-white my-4 mx-2">
+            <div className="border-b border-[#333] my-4 mx-2">
               <h4
                 className="w-full py-4 text-[#dcb735] text-2xl pl-1"
                 style={{
@@ -138,7 +160,7 @@ const Navbar = () => {
               <ListItemButton href="/">
                 <ListItemText
                   primary="Home"
-                  primaryTypographyProps={{ fontSize: '1.2rem' }}
+                  primaryTypographyProps={{ fontSize: '1.2rem', color: '#333' }}
                 />
               </ListItemButton>
             </ListItem>
@@ -147,7 +169,7 @@ const Navbar = () => {
               <ListItemButton href="/cityfolk">
                 <ListItemText
                   primary="City Folk"
-                  primaryTypographyProps={{ fontSize: '1.2rem' }}
+                  primaryTypographyProps={{ fontSize: '1.2rem', color: '#333' }}
                 />
               </ListItemButton>
             </ListItem>
@@ -156,7 +178,7 @@ const Navbar = () => {
               <ListItemButton href="/newhorizons">
                 <ListItemText
                   primary="New Horizons"
-                  primaryTypographyProps={{ fontSize: '1.2rem' }}
+                  primaryTypographyProps={{ fontSize: '1.2rem', color: '#333' }}
                 />
               </ListItemButton>
             </ListItem>

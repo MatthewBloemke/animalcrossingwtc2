@@ -62,7 +62,7 @@ const NorthDash = ({ hemisphere, setHemisphere }: any) => {
 
   return (
     <div className="h-full w-full flex flex-col">
-      <div className="md:mt-24 flex flex-col items-center md:flex-row justify-evenly mb-2 mt-20 w-[80%] mx-auto bg-[#1b9938] p-5 rounded-lg">
+      <div className="md:mt-24 flex flex-col items-center md:flex-row justify-evenly mb-2 mt-20 w-[80%] mx-auto bg-[#fdf6e3] p-5 rounded-lg shadow-lg border-[#b18b58] border-4">
         <div className="md:w-[30%] md:mb-0 mb-3 w-full">
           <FormControl fullWidth>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -87,13 +87,13 @@ const NorthDash = ({ hemisphere, setHemisphere }: any) => {
         </div>
         <div className="md:w-[30%] w-full">
           <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Hemisphere</InputLabel>
+            <InputLabel id="select-label">Hemisphere</InputLabel>
             <Select
               style={{
                 width: '100%',
               }}
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
+              labelId="select-label"
+              id="select"
               value={hemisphere}
               label="Age"
               onChange={({ target }) => setHemisphere(target.value)}

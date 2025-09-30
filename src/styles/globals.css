@@ -15,6 +15,10 @@
     @apply text-3xl sm:text-4xl
   }
 
+  h3 {
+    @apply text-2xl sm:text-lg
+  }
+
   li {
     @apply cursor-pointer
   }
@@ -24,7 +28,7 @@
   }
 }
 
-h1, h4 {
+h1, h3, h4 {
   -webkit-text-stroke: 1px #846222;
 }
 
@@ -38,9 +42,26 @@ a, svg, div {
   background-size: cover;
 }
 
+/* .navButton {
+  background: #fdf6e3;
+  color: #1b9938;
+  padding: 0.4rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.navButton:hover {
+  background: #27ae60;
+  color: white;
+  transform: scale(1.05);
+} */
+
+
 body {
   height: '100vh';
-  background-color: #27ae60;
+  background-color: #2ecc71;
 }
 
 .card {

@@ -38,13 +38,14 @@ const cityfolk = () => {
 
   return (
     <div className="h-full w-full flex flex-col">
-      <div className="md:mt-24 flex flex-col items-center md:flex-row mb-2 justify-evenly mt-20 bg-[#1b9938] w-[80%] md:w-[80%] mx-auto rounded-xl p-5">
-        <FormControl className="mb-4 md:mb-0 md:mr-6 w-full">
+      <div className="md:mt-24 flex flex-col items-center md:flex-row mb-2 justify-evenly mt-20 bg-[#fdf6e3] w-[80%] md:w-[80%] mx-auto rounded-xl p-5 border-[#b18b58] border-4 shadow-lg">
+        <FormControl className="mb-4 md:mb-0 md:mr-6 w-full text-[#333]">
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DesktopDatePicker
               label="Date"
               value={activeDate}
               onChange={handleChange}
+              sx={{ color: '#333' }}
             />
           </LocalizationProvider>
         </FormControl>

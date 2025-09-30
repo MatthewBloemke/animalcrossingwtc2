@@ -60,7 +60,7 @@ const SouthDash = ({ hemisphere, setHemisphere }: any) => {
 
   return (
     <div className="h-full w-full flex flex-col">
-      <div className="md:mt-24 flex flex-col items-center md:flex-row justify-evenly mt-20 mb-2 w-[80%] mx-auto md:w-[80%] bg-[#1b9938] rounded-lg p-5">
+      <div className="md:mt-24 flex flex-col items-center md:flex-row justify-evenly mt-20 mb-2 w-[80%] mx-auto md:w-[80%] bg-[#fdf6e3] rounded-lg p-5 shadow-lg border-[#b18b58] border-4">
         <div className="md:w-[30%] md:mb-0 mb-3 w-full">
           <FormControl fullWidth>
             <LocalizationProvider dateAdapter={AdapterDateFns}>

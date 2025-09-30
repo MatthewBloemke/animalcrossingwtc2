@@ -28,19 +28,56 @@ interface bugObject {
 const dataGridStyles = {
   root: {
     '& .MuiDataGrid-cell': {
-      borderRight: '1px solid #fff',
-      borderBottom: '1px solid #fff !important',
+      borderRight: '1px solid #333',
+      color: '#333',
+      borderBottom: '1px solid #333 !important',
     },
     '& .MuiDataGrid-columnHeaders': {
-      borderBottom: '1px solid #fff',
+      borderBottom: '1px solid #333',
+      color: '#333',
     },
     '& .MuiDataGrid-footerContainer': {
-      borderTop: '1px solid #fff',
+      borderTop: '1px solid #333',
+      color: '#333',
+      '& .MuiTablePagination-root': {
+        color: '#333',
+      },
+      '& .MuiSvgIcon-root': {
+        color: '#333',
+      },
     },
-    '& .MuiDataGrid-root': {
-      borderColor: '#fff',
+    '& .MuiDataGrid-toolbarContainer': {
+      color: '#333',
+      '& .MuiSvgIcon-root': {
+        color: '#333',
+      },
+      '& .MuiButton-root': {
+        color: '#333',
+      },
     },
-    borderColor: '#fff',
+    '& .MuiDataGrid-columnHeaderTitleContainer': {
+      color: '#333',
+      '& .MuiSvgIcon-root': {
+        color: '#333',
+      },
+    },
+    '& .MuiSvgIcon-root': {
+      color: '#333',
+    },
+    '& .MuiDataGrid-menu': {
+      '& .MuiPaper-root': {
+        backgroundColor: '#fdf6e3',
+        color: '#333',
+      },
+      '& .MuiMenuItem-root': {
+        color: '#333',
+        '& .MuiSvgIcon-root': {
+          color: '#333',
+        },
+      },
+    },
+    borderColor: '#333',
+    color: '#333',
   },
 };
 
@@ -82,8 +119,8 @@ export function formatBugTable(bugs: Array<bugObject>) {
   }
   return (
     <div
-      style={{ height: 500, backgroundColor: '#1b9938' }}
-      className="p-3 rounded-xl"
+      style={{ height: 500, backgroundColor: '#fdf6e3' }}
+      className="p-3 rounded-xl border-[#b18b58] border-4 shadow-lg"
     >
       <DataGrid rows={rows} columns={columns} sx={dataGridStyles.root} />
     </div>
@@ -130,8 +167,8 @@ export function formatFishTable(fish: any) {
   }
   return (
     <div
-      style={{ height: 500, backgroundColor: '#1b9938' }}
-      className="p-3 rounded-xl"
+      style={{ height: 500, backgroundColor: '#fdf6e3' }}
+      className="p-3 rounded-xl border-[#b18b58] border-4 shadow-lg"
     >
       <DataGrid rows={rows} columns={columns} sx={dataGridStyles.root} />
     </div>
