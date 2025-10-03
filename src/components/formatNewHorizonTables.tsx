@@ -98,7 +98,7 @@ export function formatNHBugTable(bugs: any, month: any, hemisphere: any) {
   return (
     <div
       style={{ height: 500, backgroundColor: '#fdf6e3' }}
-      className="p-3 rounded-xl"
+      className="p-3 rounded-xl border-[#b18b58] border-4 shadow-lgs"
     >
       <DataGrid rows={rows} columns={columns} sx={dataGridStyles.root} />
     </div>
@@ -139,7 +139,7 @@ export function formatNHFishTable(fish: any, month: any, hemisphere: any) {
   return (
     <div
       style={{ height: 500, backgroundColor: '#fdf6e3' }}
-      className="p-3 rounded-xl"
+      className="p-3 rounded-xl border-[#b18b58] border-4 shadow-lg"
     >
       <DataGrid rows={rows} columns={columns} sx={dataGridStyles.root} />
     </div>
